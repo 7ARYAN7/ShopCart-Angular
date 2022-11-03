@@ -1,0 +1,8 @@
+<p>
+  home works!
+</p>
+<div *ngIf="users !== undefined else elseBlock">{{users.email}}</div>
+<ng-template #elseBlock><p> api not working</p></ng-template>
+<div>
+  {{product}}
+</div>
