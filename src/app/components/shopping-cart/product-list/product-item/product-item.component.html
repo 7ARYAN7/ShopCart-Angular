@@ -17,18 +17,21 @@
 <!--    </div>-->
 <!--  </div>-->
 <!--</div>-->
-    <div class="card mb-4 box-shadow">
-      <img class="card-img-top p-2" width="100%" src="https://rukminim1.flixcart.com/image/416/416/kavefm80/headphone/h/a/s/wh-ch710n-sony-original-imafscdmhsnq77yw.jpeg?q=70"/>
-      <div class="card-body">
-        <p class="cart-text">
-          <strong class="text-muted">{{25449 | currency:'INR'}}</strong>
-        </p>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        <div class="d-flex justify-content-between align-items-center">
-          <div class="btn-group">
-            <button type="button" class="btn btn-sm btn-primary product-btn">Add to Cart</button>
-            <button type="button" class="btn btn-sm btn-outline-secondary product-btn">View Details</button>
-          </div>
-        </div>
+<div class="card mb-4 box-shadow">
+  <img class="card-img-top p-2" width="100%"
+       src="https://rukminim1.flixcart.com/image/416/416/kavefm80/headphone/h/a/s/wh-ch710n-sony-original-imafscdmhsnq77yw.jpeg?q=70"/>
+  <div class="card-body">
+    <p class="cart-text">
+      <strong *ngIf="product !== undefined" class="text-muted">{{product.price| currency:'INR'}}</strong>
+    </p>
+    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.
+      This content is a little bit longer.</p>
+    <div class="d-flex justify-content-between align-items-center">
+      <div class="btn-group">
+        <button type="button" class="btn btn-sm btn-primary product-btn">Add to Cart</button>
+        <button type="button" class="btn btn-sm btn-outline-secondary product-btn">View Details</button>
       </div>
     </div>
+  </div>
+</div>
+
