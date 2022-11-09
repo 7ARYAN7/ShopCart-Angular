@@ -1,20 +1,80 @@
-<!--<div *ngIf="cartItems.length === 0" class="alert alert-info">Your Cart is Empty.</div>-->
+<div *ngIf="cartList.length === 0" class="alert alert-info py-2 px-2">Your Cart is Empty.</div>
 
-<!--<ul *ngIf="cartItems.length > 0" class="list-group">-->
-<!--  <li class="list-group-item" *ngFor="let item of cartItems">-->
-<!--    <app-cart-item [cartItem]="item"></app-cart-item>-->
-<!--  </li>-->
+<ul *ngIf="cartList.length > 0" class="list-group ">
+  <li class="list-group-item" >
+    <section class="h-100 gradient-custom">
+      <div class="container py-1">
+        <div class="row d-flex justify-content-center my-4">
+          <div class="col-md-8">
+            <div class="card mb-4">
+              <div class="card-header py-3">
+                <h5 class="mb-0">Cart - 2 items</h5>
+              </div>
+              <div *ngFor="let item of cartList">
+                <app-cart-item [cartItem]="item"></app-cart-item>
+              </div>
+            </div>
+            <div class="card mb-4">
+              <div class="card-body">
+                <p><strong>Expected shipping delivery</strong></p>
+                <p class="mb-0">12.10.2020 - 14.10.2020</p>
+              </div>
+            </div>
+            <div class="card mb-4 mb-lg-0">
+              <div class="card-body">
+                <p><strong>We accept</strong></p>
+                <img class="me-2 pr-1" width="45px"
+                     src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/visa.svg"
+                     alt="Visa" />
+                <img class="me-2 pr-1" width="45px"
+                     src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/amex.svg"
+                     alt="American Express" />
+                <img class="me-2 pr-1" width="45px"
+                     src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/mastercard.svg"
+                     alt="Mastercard" />
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-4">
+              <div class="card-header py-3">
+                <h5 class="mb-0">Summary</h5>
+              </div>
+              <div class="card-body">
+                <ul class="list-group list-group-flush">
+                  <li
+                    class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                    Products
+                    <span>$53.98</span>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                    Shipping
+                    <span>Gratis</span>
+                  </li>
+                  <li
+                    class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
+                    <div>
+                      <strong>Total amount</strong>
+                      <strong>
+                        <p class="mb-0">(including VAT)</p>
+                      </strong>
+                    </div>
+                    <span><strong>{{totalAmount| currency:'INR'}}</strong></span>
+                  </li>
+                </ul>
+
+                <button type="button" class="btn btn-primary btn-lg btn-block">
+                  Go to checkout
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </li>
 
 <!--  <li class="list-group-item active">-->
 <!--    <strong>Total</strong> {{ cartTotal | currency:'INR' }}-->
 <!--  </li>-->
-<!--</ul>-->
-
-<ul class="list-group">
-<li class="list-group-item" *ngFor="let i of [1,2,3,4,5]">
-<app-cart-item></app-cart-item>
-</li>
-    <li class="list-group-item active">
-      <strong>Total</strong> {{ 1101 | currency:'INR' }}
-    </li>
 </ul>

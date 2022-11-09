@@ -1,5 +1,62 @@
-<div class="cart-item">
-  <span>item 1</span> x
-  <span>4</span>:
-  <strong>{{ 500 | currency:'INR' }}</strong>
+
+<div class="row mb-3 py-3 px-3">
+  <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
+    <!-- Image -->
+    <div class="bg-image hover-overlay hover-zoom ripple rounded" data-mdb-ripple-color="light">
+      <img width="160px" height="160px" [src]="cartItem?.product?.imageUrl"
+           class="w-100" alt="Blue Jeans Jacket" />
+      <a href="#!">
+        <div class="mask" style="background-color: rgba(251, 251, 251, 0.2)"></div>
+      </a>
+    </div>
+    <!-- Image -->
+  </div>
+
+  <div class="col-lg-5 col-md-6 mb-4 mb-lg-0">
+    <!-- Data -->
+    <p><strong>{{cartItem?.product?.name}}</strong></p>
+    <button type="button" class="btn btn-primary btn-sm me-1 mb-2" data-mdb-toggle="tooltip"
+            title="Remove item" (click)="removeP(cartItem?.product?.id)">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
+        <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z"/>
+      </svg>
+    </button>
+    <button type="button" class="btn btn-danger btn-sm mb-2" data-mdb-toggle="tooltip"
+            title="Move to the wish list">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag-heart-fill" viewBox="0 0 16 16">
+        <path d="M11.5 4v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5ZM8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1Zm0 6.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132Z"/>
+      </svg>
+    </button>
+    <!-- Data -->
+  </div>
+
+  <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+    <!-- Quantity -->
+    <div class="d-flex mb-4 " >
+      <button class="btn btn-primary px-3 me-2 hhh5"
+              onclick="this.parentNode.querySelector('input[type=number]').stepDown()" (click)="decreaseQ(cartItem?.product?.id)">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16">
+          <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/>
+        </svg>
+      </button>
+
+      <div class="form-outline">
+        <input id="form1" min="0" name="quantity" value="{{cartItem?.quantity}}" type="number" class="form-control" />
+      </div>
+
+      <button class="btn btn-primary  hhh5"
+              onclick="this.parentNode.querySelector('input[type=number]').stepUp()" (click)="increaseQ(cartItem?.product?.id)">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+          <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+        </svg>
+      </button>
+    </div>
+    <!-- Quantity -->
+
+    <!-- Price -->
+    <p class="text-start text-md-center">
+      <strong>{{cartItem?.product?.price| currency:'INR'}}</strong>
+    </p>
+    <!-- Price -->
+  </div>
 </div>

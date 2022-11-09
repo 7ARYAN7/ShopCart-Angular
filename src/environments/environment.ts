@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  productUrl : "http://localhost:8081/products"
+  productUrl : "http://localhost:8081/products",
+  cartUrl : "http://localhost:8081/cart"
 };
 
 /*
