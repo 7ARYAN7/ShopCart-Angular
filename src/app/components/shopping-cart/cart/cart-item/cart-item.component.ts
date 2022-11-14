@@ -9,7 +9,7 @@ import {CartService} from "../../../../service/cart.service";
 })
 export class CartItemComponent implements OnInit {
   @Input() cartItem? : Cart;
-  userId=1;
+  userId: number = parseInt(window.localStorage.getItem("userId") || "-1");
   constructor(private cartService:CartService) { }
 
   ngOnInit(): void {

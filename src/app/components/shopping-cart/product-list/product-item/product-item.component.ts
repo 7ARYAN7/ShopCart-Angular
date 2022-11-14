@@ -17,16 +17,12 @@ export class ProductItemComponent implements OnInit {
  public products : Product[] = [];
 
   @Input() productItem?: Product;
-  userId=1;
+  userId: number = parseInt(window.localStorage.getItem("userId") || "-1");
   constructor(private productService : ProductService,private cartService:CartService) {}
 
   ngOnInit(): void {
-    this.rNN();
   }
   public handleAddToCart(id:number|undefined){
     this.cartService.addToCart(this.userId,id).subscribe(data =>{console.log(data.toString()+"dddddd")});
-  }
-  public rNN():void{
-    console.log(this.productItem?.price+"hhihihi");
   }
 }

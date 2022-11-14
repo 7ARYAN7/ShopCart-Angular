@@ -1,9 +1,9 @@
-<div class="row">
-  <div class="col-md-4 offset-md-4">
+<div class="row mt-lg-3">
+  <div class="col-md-6 offset-md-3">
     <div class="guest-form-card card">
 
       <div class="card-header text-center">
-        <h2>Register Here</h2>
+        <h2>Signup</h2>
       </div>
 
       <div class="card-body">
@@ -18,7 +18,7 @@
             <span class="invalid-feedback">Name can't be blank.</span>
           </div>
 
-          <div class="form-group">
+          <div class="form-group pb-lg-4">
             <label for="email">Email</label>
             <input
               type="email"
@@ -28,14 +28,68 @@
             />
           </div>
 
-          <div class="form-group">
-            <label for="username">Username</label>
+          <div class="form-group row">
+            <div class="form-group col-md-6 mb-4">
+            <label for="country">Country</label>
             <input
-              id="username"
+              id="country"
               class="form-control"
               formControlName="username"
             />
-            <span class="invalid-feedback">Username can't be blank.</span>
+            <span class="invalid-feedback">Country can't be blank.</span>
+              </div>
+            <div class="form-group col-md-6 mb-4">
+              <label for="state">State</label>
+              <input
+                id="state"
+                class="form-control"
+                formControlName="username"
+              />
+              <span class="invalid-feedback">State can't be blank.</span>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="form-group col-md-6 mb-4">
+              <label for="city">City</label>
+              <input
+                id="city"
+                class="form-control"
+                formControlName="username"
+              />
+              <span class="invalid-feedback">City can't be blank.</span>
+            </div>
+            <div class="form-group col-md-6 mb-4">
+              <label for="pin">PIN</label>
+              <input
+                id="pin"
+                type="number"
+                class="form-control"
+                formControlName="username"
+              />
+              <span class="invalid-feedback">Pin can't be blank.</span>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="form-group col-md-6 mb-4">
+              <label for="hn">House Number</label>
+              <input
+                id="hn"
+                type="number"
+                class="form-control"
+                formControlName="username"
+              />
+              <span class="invalid-feedback">House Number can't be blank.</span>
+            </div>
+            <div class="form-group col-md-6 mb-4">
+              <label for="phone">Phone</label>
+              <input
+                id="phone"
+                type="phone"
+                class="form-control"
+                formControlName="username"
+              />
+              <span class="invalid-feedback">Phone can't be blank.</span>
+            </div>
           </div>
 
           <div class="form-group">
@@ -48,7 +102,6 @@
             />
 
           </div>
-
           <div class="form-group">
             <label for="confirmPassword">Confirm Password</label>
             <input
@@ -58,9 +111,9 @@
               formControlName="confirmPassword"
             />
             <span class="invalid-feedback">Passwords must match.</span>
-          </div>
 
-          <button class="btn btn-primary btn-block" >Register</button>
+          </div>
+          <button class="btn btn-primary btn-block" >Signup</button>
         </form>
       </div>
     </div>

@@ -14,7 +14,7 @@ export class CartComponent implements OnInit {
 
   cartTotal = 0;
   totalAmount = 0;
-  cartId =1;
+  cartId : number = parseInt(window.localStorage.getItem("userId") || "-1");
   constructor(private cartService:CartService) { }
 
   ngOnInit(): void {

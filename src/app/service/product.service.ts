@@ -9,14 +9,26 @@ import {Observable} from "rxjs";
 })
 export class ProductService {
 
+  searchByString : string;
+
   private productApiUrl = environment.productUrl;
 
   constructor(private http: HttpClient) { }
 
-  public getProductById() : Observable<Product>{
-    return this.http.get<Product>(`${this.productApiUrl}/getById/1`);
+  setString(s:string){
+    this.searchByString=s;
+    console.log("seear")
   }
+
   public getAllProduct():Observable<Product[]>{
-    return this.http.get<Product[]>(`${this.productApiUrl}/getAllProducts`)
+    if(this.searchByString=== null || this.searchByString===undefined) {
+      console.log(this.searchByString+"bjhbj")
+      return this.http.get<Product[]>(`${this.productApiUrl}/getAllProducts`);
+    }
+    else {
+      console.log(this.searchByString+"gftggg");
+      return this.http.get<Product[]>(`${this.productApiUrl}/search/${this.searchByString}`);
+
+    }
   }
 }
