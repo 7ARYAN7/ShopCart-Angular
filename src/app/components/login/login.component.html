@@ -24,7 +24,9 @@
             <input type="checkbox" id="remember" name="remember" #remember="ngModel" [(ngModel)]="model.remember">
             <label class="ml-1" for="remember">Remember Me</label>
           </div>
-
+         <div *ngIf="errorL" class="form-group ">
+           <span class="text-danger">Invalid username or Password</span>
+         </div>
           <button class="btn btn-primary btn-block" [disabled]="loginForm.invalid">Login</button>
         </form>
       </div>

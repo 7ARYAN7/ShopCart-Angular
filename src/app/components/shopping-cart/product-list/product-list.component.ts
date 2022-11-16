@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ProductService} from "../../../service/product.service";
 import {Product} from "../../../model/product";
+import {Filter} from "../../../model/filter";
 
 
 @Component({
@@ -10,14 +11,36 @@ import {Product} from "../../../model/product";
 })
 export class ProductListComponent implements OnInit {
   productList: Product[] = [];
-  constructor(private productService:ProductService) { }
+  search:string;
+  model: any = {};
+  constructor(private productService: ProductService) {
+  }
 
   ngOnInit(): void {
     this.loadProducts();
+
   }
+
   loadProducts() {
-    this.productService.getAllProduct().subscribe((products) => {
-      this.productList = products;
+      this.productService.getAllProduct().subscribe((products) => {
+        this.productList = products;
+      })
+  }
+  searcH(){
+    if(this.model.search==='')
+      this.loadProducts();
+    else {
+      this.productService.searchProductByString(this.model.search).subscribe((products) => {
+        this.productList = products;
+      })
+    }
+  }
+
+  loadFilteredProducts(filter: Filter, category: string){
+    this.productService.findByFilter(filter,category).subscribe((products)=>{
+      this.productList= products;
+      console.log(this.productList[0].name);
+
     })
   }
 }

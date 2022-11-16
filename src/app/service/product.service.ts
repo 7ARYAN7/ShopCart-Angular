@@ -3,32 +3,26 @@ import {HttpClient} from "@angular/common/http";
 import {environment} from "../../environments/environment";
 import {Product} from "../model/product";
 import {Observable} from "rxjs";
+import {Filter} from "../model/filter";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
 
-  searchByString : string;
-
   private productApiUrl = environment.productUrl;
 
   constructor(private http: HttpClient) { }
 
-  setString(s:string){
-    this.searchByString=s;
-    console.log("seear")
+  public getAllProduct():Observable<Product[]>{
+      return this.http.get<Product[]>(`${this.productApiUrl}/getAllProducts`);
+
+  }
+  public searchProductByString(searchByString:string):Observable<Product[]>{
+    return this.http.get<Product[]>(`${this.productApiUrl}/search/${searchByString}`);
   }
 
-  public getAllProduct():Observable<Product[]>{
-    if(this.searchByString=== null || this.searchByString===undefined) {
-      console.log(this.searchByString+"bjhbj")
-      return this.http.get<Product[]>(`${this.productApiUrl}/getAllProducts`);
-    }
-    else {
-      console.log(this.searchByString+"gftggg");
-      return this.http.get<Product[]>(`${this.productApiUrl}/search/${this.searchByString}`);
-
-    }
+  public findByFilter(filter:Filter,category:string):Observable<Product[]>{
+    return this.http.post<Product[]>(`${this.productApiUrl}/${category}/getFilteredProducts`,filter)
   }
 }

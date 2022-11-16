@@ -3,6 +3,7 @@ import {Login} from "../../model/login";
 import {LoginService} from "../../service/login.service";
 import {LoginResponse} from "../../model/login-response";
 import {Router} from "@angular/router";
+import {HttpErrorResponse} from "@angular/common/http";
 
 @Component({
   selector: 'app-login',
@@ -10,7 +11,7 @@ import {Router} from "@angular/router";
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
+  errorL:boolean;
   model: any = {}
   loginR:LoginResponse;
 
@@ -31,6 +32,9 @@ export class LoginComponent implements OnInit {
         window.localStorage.setItem("userId",String(this.loginR.userId));
         window.localStorage.setItem("name",String(this.loginR.result));
         window.location.href="/";
+        this.errorL=false;
+      },(error:HttpErrorResponse)=>{
+        this.errorL = true;
       }
     )
   }

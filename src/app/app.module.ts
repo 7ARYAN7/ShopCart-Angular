@@ -17,7 +17,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { PageNotFoundComponent } from './components/shared/page-not-found/page-not-found.component';
 import {AppRoutingModule} from "./app-routing.module";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-
+import { Ng5SliderModule } from 'ng5-slider';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,6 +39,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
+    Ng5SliderModule,
     ReactiveFormsModule
   ],
   providers: [],

@@ -1,22 +1,31 @@
-<div class="card filters">
+<div class="card filters ">
 
   <div class="card-header">
     <strong>Filters</strong>
   </div>
 
   <div class="card-body">
-    <form>
-      <div class="form-group">
-        <label for="from">From</label>
-        <input type="number" id="from" class="form-control">
+    <form #filter="ngForm" (ngSubmit)="filterby()">
+      <div class="col py-3 form-group">
+      <ng5-slider [(value)]="minValue" [(highValue)]="maxValue" [options]="options" class="pb-9" ></ng5-slider>
       </div>
 
       <div class="form-group">
-        <label for="to">To</label>
-        <input type="number" id="to" class="form-control">
+        <label for="categoryL">Category</label>
+        <input type="value" id="categoryL" name="categoryL" class="form-control" #categoryL="ngModel" [(ngModel)]="model.categoryL"/>
       </div>
 
-      <button class="btn btn-primary btn-block btn-sm">Filter by Price</button>
+      <div class="form-group">
+        <label for="subcategory">Subcategory</label>
+        <input type="value" id="subcategory" name="subcategory" class="form-control" #subcategory="ngModel" [(ngModel)]="model.subcategory"/>
+      </div>
+
+      <div class="form-group">
+        <label for="brand">Brand</label>
+        <input type="value" id="brand" name="brand" class="form-control" #brand="ngModel" [(ngModel)]="model.brand" />
+      </div>
+
+      <button class="btn btn-primary btn-block btn-sm" type="">Filter by Price</button>
     </form>
   </div>
 </div>

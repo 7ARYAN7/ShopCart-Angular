@@ -16,7 +16,7 @@ export class CartItemComponent implements OnInit {
   }
   increaseQ(productId:number|undefined){
     this.cartService.addToCart(this.userId,productId).subscribe(data =>{console.log(data.toString()+"dddddd")});
-    window.location.reload();
+   window.location.reload();
 
   }
    decreaseQ(productId:number|undefined){

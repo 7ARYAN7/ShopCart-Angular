@@ -2,9 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import {ProductService} from "../../../service/product.service";
 import {ProductListComponent} from "../../shopping-cart/product-list/product-list.component";
 import {Router} from "@angular/router";
+import {HttpErrorResponse} from "@angular/common/http";
+import {LoginComponent} from "../../login/login.component";
 
 @Component({
   selector: 'app-navbar',
+  providers:[LoginComponent],
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
@@ -12,17 +15,14 @@ export class NavbarComponent implements OnInit {
   model: any = {}
   name:any;
   notLogged:boolean;
-  constructor(private productService:ProductService,private router : Router) { }
+  doNotExists:boolean;
+  constructor(private productService:ProductService,private router : Router,private login:LoginComponent) { }
 
   ngOnInit(): void {
     this.name= window.localStorage.getItem("name");
-   this.notLogged =  this.isLogin();
+    this.notLogged =  this.isLogin();
+    this.doNotExists = this.login.errorL
   }
-
- searchByString(){
-    this.productService.setString(this.model.search);
-   window.location.href="/";
- }
 
   isLogin() {
     if (window.localStorage.getItem("userId") == null)
