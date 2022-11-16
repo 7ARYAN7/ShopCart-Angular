@@ -4,15 +4,58 @@
 <!--    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>-->
 <!--  </form>-->
 <!--</div>-->
-<form #searchS="ngForm" class=" my-2 my-lg-0 mr-5 w-80 py-2" (ngSubmit)="searcH()">
-  <div class="input-group">
-    <input class="form-control mr-sm-2 ml-auto" type="text" placeholder="Search" name="search" id="search" #search="ngModel" [(ngModel)]="model.search">
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-  </div>
-</form>
-
 <div class="row">
-  <div class="col-md-4" *ngFor="let product of productList">
-    <app-product-item [productItem]="product"></app-product-item>
+  <div class="col-md-4">
+    <div class="card filters ">
+      <div class="card-header">
+        <strong>Filters</strong>
+      </div>
+      <div class="card-body">
+        <form #filter="ngForm" (ngSubmit)="filterby()">
+          <div class="col py-3 form-group">
+            <ng5-slider [(value)]="minValue" [(highValue)]="maxValue" [options]="options" class="pb-9"></ng5-slider>
+          </div>
+          <div class="form-group">
+            <label for="categoryL">Category</label>
+            <input type="value" id="categoryL" name="categoryL" class="form-control" #categoryL="ngModel"
+                   [(ngModel)]="model.categoryL"/>
+          </div>
+
+          <div class="form-group">
+            <label for="subcategory">Subcategory</label>
+            <input type="value" id="subcategory" name="subcategory" class="form-control" #subcategory="ngModel"
+                   [(ngModel)]="model.subcategory"/>
+          </div>
+
+          <div class="form-group">
+            <label for="brand">Brand</label>
+            <input type="value" id="brand" name="brand" class="form-control" #brand="ngModel"
+                   [(ngModel)]="model.brand"/>
+          </div>
+
+          <button class="btn btn-primary btn-block btn-sm" type="">Filter by Price</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-8">
+    <form #searchS="ngForm" class=" my-2 my-lg-0 mr-5 w-80 py-2" (ngSubmit)="searcH()">
+      <div class="input-group">
+        <input class="form-control mr-sm-2 ml-auto" type="text" placeholder="Search" name="search" id="search"
+               #search="ngModel" [(ngModel)]="model.search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </div>
+    </form>
+
+    <div class="row" *ngIf="!productNF else productnotfound">
+      <div class="col-md-4" *ngFor="let product of productList">
+        <app-product-item [productItem]="product"></app-product-item>
+      </div>
+    </div>
+    <ng-template #productnotfound>
+      <div class="d-flex justify-content-center pt-4" >
+        <h1 class="text-danger"> Product Not Found </h1>
+      </div>
+    </ng-template>
   </div>
 </div>
