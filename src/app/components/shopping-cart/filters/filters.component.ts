@@ -31,9 +31,9 @@ export class FiltersComponent implements OnInit {
     }
   };
 
-  filterby(){
-    console.log(this.model.categoryL)
-    let filter = new Filter(this.minValue.toString(),this.maxValue.toString(),this.model.subcategory,this.model.brand)
-     this.prod.loadFilteredProducts(filter,this.model.categoryL);
-  }
+  // filterby(){
+  //   console.log(this.model.categoryL)
+  //   let filter = new Filter(this.minValue.toString(),this.maxValue.toString(),this.model.subcategory,this.model.brand)
+  //    this.prod.loadFilteredProducts(filter,this.model.categoryL);
+  // }
 }
