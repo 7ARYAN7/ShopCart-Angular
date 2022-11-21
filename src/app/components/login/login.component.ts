@@ -4,9 +4,11 @@ import {LoginService} from "../../service/login.service";
 import {LoginResponse} from "../../model/login-response";
 import {Router} from "@angular/router";
 import {HttpErrorResponse} from "@angular/common/http";
+import {CartComponent} from "../shopping-cart/cart/cart.component";
 
 @Component({
   selector: 'app-login',
+  providers:[CartComponent],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
@@ -14,15 +16,14 @@ export class LoginComponent implements OnInit {
   errorL:boolean;
   model: any = {}
   loginR:LoginResponse;
-
-  constructor(private loginService : LoginService,private router :Router) { }
+  quant=0;
+  constructor(private loginService : LoginService,private router :Router,private quantCart:CartComponent) { }
 
   ngOnInit() {
+    this.quantCart.loadCart();
   }
 
   login() {
-    console.log(this.model)
-
     let loginData = new Login(this.model.username, this.model.password);
 
     this.loginService.login(loginData).subscribe(
