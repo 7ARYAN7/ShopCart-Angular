@@ -25,4 +25,9 @@ export class ProductItemComponent implements OnInit {
   public handleAddToCart(id:number|undefined){
     this.cartService.addToCart(this.userId,id).subscribe(data =>{console.log(data.toString()+"dddddd")});
   }
+  sendP(id:number|undefined){
+    if(window.localStorage.getItem('productId')!=null)
+    window.localStorage.removeItem('productId');
+    window.localStorage.setItem('productId',String(id));
+  }
 }

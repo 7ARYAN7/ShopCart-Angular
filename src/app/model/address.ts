@@ -1,13 +1,13 @@
 export class Address {
-  street: string;
-  city: string;
+  pin: number;
+  country: string;
   state: string;
-  pinCode: number;
+  city: string;
 
-  constructor(street: string, city: string, state: string, pinCode: number) {
-    this.street = street;
+  constructor(pin: number, city: string, state: string, country: string) {
+    this.pin = pin;
     this.city = city;
     this.state = state;
-    this.pinCode = pinCode;
+    this.country = country;
   }
 }

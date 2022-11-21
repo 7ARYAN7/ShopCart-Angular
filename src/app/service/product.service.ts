@@ -23,6 +23,9 @@ export class ProductService {
   }
 
   public findByFilter(filter:Filter,category:string):Observable<Product[]>{
-    return this.http.post<Product[]>(`${this.productApiUrl}/${category}/getFilteredProducts`,filter)
+    return this.http.post<Product[]>(`${this.productApiUrl}/${category}/getFilteredProducts`,filter);
+  }
+  public getProductByID(productId:number):Observable<Product>{
+    return this.http.get<Product>(`${this.productApiUrl}/getById/${productId}`);
   }
 }

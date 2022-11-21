@@ -7,7 +7,9 @@ export const environment = {
   productUrl : "http://localhost:8081/products",
   cartUrl : "http://localhost:8081/cart",
   loginUrl: "http://localhost:8081/login",
-  signupUrl :"http://localhost:8081/signup"
+  signupUrl :"http://localhost:8081/signup",
+  getUserUrl:"http://localhost:8081/getProfile",
+  updateProfileUrl:"http://localhost:8081/updateProfile"
 };
 
 /*

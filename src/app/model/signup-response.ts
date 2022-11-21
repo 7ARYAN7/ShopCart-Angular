@@ -1,9 +1,7 @@
 export class SignupResponse {
   userId:number;
-  result:string;
 
-  constructor(userId: number, result: string) {
+  constructor(userId: number) {
     this.userId = userId;
-    this.result = result;
   }
 }

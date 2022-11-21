@@ -1,16 +1,16 @@
 import {Address} from "./address";
 
-export class User {
+export class Profile {
+  userId : number;
   name: String;
   email: String;
-  password : String;
   phone : number;
   address : Address;
 
-  constructor(name: String, email: String, password: String, phone: number, address: Address) {
+  constructor(name: String, email: String, phone: number, userId: number, address: Address) {
+    this.userId = userId;
     this.name = name;
     this.email = email;
-    this.password = password;
     this.phone = phone;
     this.address = address;
   }
