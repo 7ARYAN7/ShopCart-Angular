@@ -15,15 +15,24 @@ export class ProductItemComponent implements OnInit {
 
  public product : Product;
  public products : Product[] = [];
-
+  tot:number;
+  count=0;
   @Input() productItem?: Product;
   userId: number = parseInt(window.localStorage.getItem("userId") || "-1");
   constructor(private productService : ProductService,private cartService:CartService) {}
 
   ngOnInit(): void {
+    this.tot= parseInt(window.localStorage.getItem('itemNumber')||'-1');
+    console.log(this.tot+"jiji");
   }
   public handleAddToCart(id:number|undefined){
     this.cartService.addToCart(this.userId,id).subscribe(data =>{console.log(data.toString()+"dddddd")});
+    if(this.tot==-1){
+    this.tot=1;}
+    else {
+      this.count=this.tot+1;}
+    window.localStorage.setItem('itemNumber',String(this.count));
+    window.location.reload();
   }
   sendP(id:number|undefined){
     if(window.localStorage.getItem('productId')!=null)

@@ -12,7 +12,8 @@ import {LoginComponent} from "../../login/login.component";
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-  model: any = {}
+  model: any = {};
+  tot:number;
   name:any;
   notLogged:boolean;
   doNotExists:boolean;
@@ -21,7 +22,8 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
     this.name= window.localStorage.getItem("name");
     this.notLogged =  this.isLogin();
-    this.doNotExists = this.login.errorL
+    this.doNotExists = this.login.errorL;
+    this.tot= parseInt(window.localStorage.getItem('itemNumber')||'-1');
   }
 
   isLogin() {
