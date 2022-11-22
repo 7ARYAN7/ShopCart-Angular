@@ -8,17 +8,17 @@
       </div>
     </div>
     <div class="col-md-7">
-      <form #updateProfile="ngForm" (ngSubmit)="updateP()">
+
       <div class="p-3 py-5">
         <div class="d-flex justify-content-between align-items-center mb-3">
           <h3 class="text-right">Edit Profile</h3>
          <button class="btn btn-primary" type="button" [routerLink]="['/profile']">Go Back</button>
         </div>
-
+        <form #updateProfile="ngForm" (ngSubmit)="updateP()">
         <div class="row mt-2">
           <div class="col-md-12">
             <label class="labels">Name</label>
-            <input type="text" class="form-control"
+            <input  type="text" class="form-control"
            [ngClass]="{ 'is-invalid': name.touched && name.invalid }"
             name="name" #name="ngModel" [(ngModel)]="model.name"
             >
@@ -27,10 +27,8 @@
         <div class="row mt-3">
           <div class="col-md-12">
             <label class="labels">Email ID</label>
-            <input type="text" class="form-control"
-                   [ngClass]="{ 'is-invalid': email.touched && email.invalid }"
-                   name="email" #email="ngModel" [(ngModel)]="model.email"
-                   ngModel [email]="true">
+            <input type="text" class="form-control" placeholder="${{user.email}}"
+                  disabled >
           </div>
           <div class="col-md-12">
             <label class="labels">Phone Number</label>
@@ -41,24 +39,36 @@
         <div class="row mt-3">
           <div class="col-md-6">
             <label class="labels">Country</label>
-            <input type="text" class="form-control" ></div>
+            <input type="text" class="form-control"
+              name="country" #country="ngModel" [(ngModel)]="model.country"
+            >
+          </div>
           <div class="col-md-6">
             <label class="labels">State</label>
-            <input type="text" class="form-control" ></div>
+            <input type="text" class="form-control"
+             name="state" #state="ngModel" [(ngModel)]="model.state"
+            >
+          </div>
         </div>
         <div class="row mt-3">
           <div class="col-md-6">
             <label class="labels">City</label>
-            <input type="text" class="form-control" ></div>
+            <input type="text" class="form-control"
+             name="city" #city="ngModel" [(ngModel)]="model.city"
+            >
+          </div>
           <div class="col-md-6">
             <label class="labels">Pin</label>
-            <input type="text" class="form-control" ></div>
+            <input type="text" class="form-control"
+             name="pin" #pin="ngModel" [(ngModel)]="model.pin"
+            >
+          </div>
         </div>
         <div class="mt-5 text-center">
-          <button class="btn btn-primary profile-button" type="button">Save Profile</button>
+          <button class="btn btn-primary profile-button" type="submit">Save Profile</button>
         </div>
+        </form>
       </div>
-      </form>
     </div>
   </div>
 </div>

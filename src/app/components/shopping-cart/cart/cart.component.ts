@@ -22,7 +22,6 @@ export class CartComponent implements OnInit {
 
   }
     loadCart(){
-      console.log("callld");
     this.cartService.getCart(this.cartId).subscribe((cartItems)=>{
       this.cartList=cartItems;
      for(let i=0;i<cartItems.length;i++){

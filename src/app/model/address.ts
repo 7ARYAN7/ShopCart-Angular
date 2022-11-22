@@ -4,7 +4,7 @@ export class Address {
   state: string;
   city: string;
 
-  constructor(pin: number, city: string, state: string, country: string) {
+  constructor(pin: number, country: string, state: string, city: string) {
     this.pin = pin;
     this.city = city;
     this.state = state;

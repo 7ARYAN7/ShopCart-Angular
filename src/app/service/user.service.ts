@@ -17,7 +17,7 @@ export class UserService {
     return this.http.get<User>(`${this.userProfileUrl}/${id}`);
   }
   public updateP(profile:Profile):Observable<string>{
-    return this.http.get<string>(`${this.updateProfileUrl}`);
+    return this.http.post<string>(`${this.updateProfileUrl}`,profile);
   }
 
 }

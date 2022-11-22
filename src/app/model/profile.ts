@@ -1,14 +1,14 @@
 import {Address} from "./address";
 
 export class Profile {
-  userId : number;
+  id : number;
   name: String;
   email: String;
   phone : number;
   address : Address;
 
-  constructor(name: String, email: String, phone: number, userId: number, address: Address) {
-    this.userId = userId;
+  constructor(id: number, name: String, email: String, phone: number, address: Address) {
+    this.id = id;
     this.name = name;
     this.email = email;
     this.phone = phone;
