@@ -1,9 +1,10 @@
 export class LoginResponse {
   userId:number;
-  result:string;
-
-  constructor(userId: number, result: string) {
+  name:string;
+  role:string
+  constructor(userId: number, name: string,role:string) {
     this.userId = userId;
-    this.result = result;
+    this.name = name;
+    this.role=role;
   }
 }

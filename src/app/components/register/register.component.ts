@@ -4,7 +4,7 @@ import {Address} from "../../model/address";
 import {SignupService} from "../../service/signup.service";
 import {Router} from "@angular/router";
 import {HttpErrorResponse} from "@angular/common/http";
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 
 // function passwordsMatchValidator({form}: { form: any | undefined}) {
 //   const password = form.password
@@ -38,7 +38,9 @@ export class RegisterComponent implements OnInit {
   model: any = {};
   constructor(private signupService:SignupService, private router : Router,private fb: FormBuilder) {
   }
-  form: FormGroup = new FormGroup({});
+  form: FormGroup = new FormGroup({
+    //name : new FormControl('',[Validators.pattern('[0-9]+')])
+  });
   ngOnInit() {
   }
 
@@ -48,6 +50,7 @@ export class RegisterComponent implements OnInit {
     this.signupService.signup(user).subscribe((response : number)=>{
       window.localStorage.setItem("userId",response.toString());
       window.localStorage.setItem("name",user.name.toString());
+      window.localStorage.setItem('role','user');
       window.location.href ='/';
       },(error:HttpErrorResponse)=>{
         alert(error.message);

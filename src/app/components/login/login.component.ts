@@ -31,7 +31,8 @@ export class LoginComponent implements OnInit {
         window.localStorage.clear();
         this.loginR = response;
         window.localStorage.setItem("userId",String(this.loginR.userId));
-        window.localStorage.setItem("name",String(this.loginR.result));
+        window.localStorage.setItem("name",String(this.loginR.name));
+        window.localStorage.setItem("role",String(this.loginR.role));
         window.location.href="/";
         this.errorL=false;
       },(error:HttpErrorResponse)=>{
