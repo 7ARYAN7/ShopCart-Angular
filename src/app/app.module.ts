@@ -18,10 +18,11 @@ import { PageNotFoundComponent } from './components/shared/page-not-found/page-n
 import {AppRoutingModule} from "./app-routing.module";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { Ng5SliderModule } from 'ng5-slider';
-import { ProfileComponent } from './components/shared/profile/profile.component';
-import { OrderHistoryComponent } from './components/shared/order-history/order-history.component';
-import { EditProfileComponent } from './components/shared/profile/edit-profile/edit-profile.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { OrderHistoryComponent } from './components/order-history/order-history.component';
+import { EditProfileComponent } from './components/profile/edit-profile/edit-profile.component';
 import { ProductdetailComponent } from './components/shopping-cart/productdetail/productdetail.component';
+import { OrderComponent } from './components/shopping-cart/order/order.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +41,8 @@ import { ProductdetailComponent } from './components/shopping-cart/productdetail
     ProfileComponent,
     OrderHistoryComponent,
     EditProfileComponent,
-    ProductdetailComponent
+    ProductdetailComponent,
+    OrderComponent
   ],
   imports: [
     BrowserModule,

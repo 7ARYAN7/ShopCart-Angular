@@ -1,9 +1,9 @@
 import {Component, ErrorHandler, OnInit} from '@angular/core';
-import {UserService} from "../../../../service/user.service";
+import {UserService} from "../../../service/user.service";
 import {ProfileComponent} from "../profile.component";
-import {User} from "../../../../model/user";
-import {Profile} from "../../../../model/profile";
-import {Address} from "../../../../model/address";
+import {User} from "../../../model/user";
+import {Profile} from "../../../model/profile";
+import {Address} from "../../../model/address";
 import {HttpErrorResponse} from "@angular/common/http";
 
 @Component({
