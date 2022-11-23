@@ -1,0 +1,76 @@
+<form class="align-content-center" #addProduct="ngForm" (ngSubmit)="productAdd()">
+  <div class="container card-body col-md-12 col-md-offset-4">
+    <!-- Form Name -->
+    <legend class="card-header">ADD PRODUCT</legend>
+    <!-- Text input-->
+    <div class="form-group align-content-center card-body row">
+      <label class="col-lg-5 text-right pt-2" for="product_name">Product Name</label>
+      <div class="col-lg-6">
+        <input id="product_name" name="product_name" class="form-control input-md"
+               [ngClass]="{ 'is-invalid': product_name.touched && product_name.invalid }"
+               name="product_name" #product_name="ngModel" [(ngModel)]="model.product_name" required
+               required="" type="text">
+      </div>
+    </div>
+
+    <div class="form-group align-content-center card-body row">
+      <label class="col-lg-5 text-right pt-2" for="categoryL">Product Category</label>
+      <div class="col-lg-6">
+        <input id="categoryL" name="categoryL" class="form-control input-md"
+               [ngClass]="{ 'is-invalid': categoryL.touched && categoryL.invalid }"
+               name="categoryL" #categoryL="ngModel" [(ngModel)]="model.categoryL" required
+               required=""
+               type="text">
+      </div>
+    </div>
+
+
+    <!-- Textarea -->
+    <div class="form-group align-content-center card-body row">
+      <label class="col-lg-5 text-right pt-3" for="details">Product Details</label>
+      <div class="col-lg-6">
+        <textarea class="form-control" id="details" name="details"
+                  [ngClass]="{ 'is-invalid': details.touched && details.invalid }"
+                  name="details" #details="ngModel" [(ngModel)]="model.details"
+        ></textarea>
+      </div>
+    </div>
+
+    <div class="form-group align-content-center card-body row">
+      <label class="col-lg-5 text-right pt-2" for="price">Product Price</label>
+      <div class="col-lg-6">
+        <input id="price" name="price" class="form-control input-md"
+               [ngClass]="{ 'is-invalid': price.touched && price.invalid }"
+               name="price" #price="ngModel" [(ngModel)]="model.price"
+               type="text">
+      </div>
+    </div>
+
+    <div class="form-group align-content-center card-body row">
+      <label class="col-lg-5 text-right pt-2" for="image">Image Link</label>
+      <div class="col-lg-6">
+        <input id="image" name="image" class="form-control input-md"
+               [ngClass]="{ 'is-invalid': image.touched && image.invalid }"
+               name="image" #image="ngModel" [(ngModel)]="model.image"
+               type="text">
+          <br>
+      </div>
+    </div>
+
+    <div class="form-group align-content-center card-body row">
+      <label class="col-lg-5 text-right pt-2" for="subcategory">Product Subcategory</label>
+      <div class="col-lg-6">
+        <input id="subcategory" name="subcategory" class="form-control input-md"
+               [ngClass]="{ 'is-invalid': subcategory.touched && subcategory.invalid }"
+               name="subcategory" #subcategory="ngModel" [(ngModel)]="model.subcategory"
+               type="text">
+      </div>
+    </div>
+
+    <div class="d-flex justify-content-center align-items-center">
+      <div class="btn-group">
+        <button type="submit" class="btn btn-group-lg btn-primary product-btn btn-lg" [disabled]="addProduct.invalid">Add Product</button>
+      </div>
+    </div>
+  </div>
+</form>

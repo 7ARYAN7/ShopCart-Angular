@@ -34,7 +34,13 @@
         </svg>
         Sign Up</a></li>
       </ul>
-      <ng-template #namE><li class="nav-item dropdown">
+      <ng-template #namE>
+        <li *ngIf="role==='admin'" class="nav-item">
+          <a class="nav-link" [routerLink]="['/addProduct']" >
+            Add Product
+          </a>
+        </li>
+        <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           {{name}}
         </a>
@@ -43,7 +49,8 @@
           <a class="dropdown-item" [routerLink]="['/orders']">Order History</a>
           <a class="dropdown-item" href="#" (click)="logout()">Logout</a>
         </div>
-      </li></ng-template>
+      </li>
+      </ng-template>
       <li class="nav-item">
         <a class="ml-1 btn mt-1" [routerLink]="['/cart']">
           <svg style="color: white;" xmlns="http://www.w3.org/2000/svg" width="20" height="25" fill="currentColor">

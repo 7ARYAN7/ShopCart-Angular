@@ -23,6 +23,8 @@ import { OrderHistoryComponent } from './components/order-history/order-history.
 import { EditProfileComponent } from './components/profile/edit-profile/edit-profile.component';
 import { ProductdetailComponent } from './components/shopping-cart/productdetail/productdetail.component';
 import { OrderComponent } from './components/shopping-cart/order/order.component';
+import { AddProductComponent } from './components/admin/add-product/add-product.component';
+import { ModifyProductComponent } from './components/admin/modify-product/modify-product.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +44,9 @@ import { OrderComponent } from './components/shopping-cart/order/order.component
     OrderHistoryComponent,
     EditProfileComponent,
     ProductdetailComponent,
-    OrderComponent
+    OrderComponent,
+    AddProductComponent,
+    ModifyProductComponent
   ],
   imports: [
     BrowserModule,

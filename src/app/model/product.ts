@@ -5,13 +5,12 @@ export class Product {
   details: string;
   imageUrl: string | undefined;
   category : string;
-  subcategory : string;
-  constructor(id: number, name='', price = 0, details='',imageUrl='',category='',subcategory='') {
+  constructor(id: number, name='', price = 0, details='',imageUrl='',category='') {
     this.id = id
     this.name = name
     this.details = details
     this.price = price
     this.category = category
-    this.subcategory = subcategory
   }
 }
+

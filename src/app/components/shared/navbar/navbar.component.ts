@@ -18,6 +18,8 @@ export class NavbarComponent implements OnInit {
   name:any;
   notLogged:boolean;
   doNotExists:boolean;
+  role= window.localStorage.getItem('role');
+
   constructor(private productService:ProductService,private router : Router,private login:LoginComponent,private quantCart:CartComponent) { }
 
   ngOnInit(): void {

@@ -11,6 +11,8 @@ import {OrderHistoryComponent} from "./components/order-history/order-history.co
 import {EditProfileComponent} from "./components/profile/edit-profile/edit-profile.component";
 import {ProductdetailComponent} from "./components/shopping-cart/productdetail/productdetail.component";
 import {OrderComponent} from "./components/shopping-cart/order/order.component";
+import {AddProductComponent} from "./components/admin/add-product/add-product.component";
+import {ModifyProductComponent} from "./components/admin/modify-product/modify-product.component";
 
 const routes: Routes = [
   { path: '', redirectTo: '/shop', pathMatch: 'full' },
@@ -22,6 +24,8 @@ const routes: Routes = [
   { path: 'cart', component: CartComponent },
   { path: 'editProfile', component: EditProfileComponent },
   { path: 'order', component: OrderComponent },
+  { path: 'modifyProduct', component: ModifyProductComponent },
+  { path: 'addProduct', component: AddProductComponent },
   { path: 'productDetail', component: ProductdetailComponent },
   { path: '**', component: PageNotFoundComponent }
 ]
